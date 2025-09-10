@@ -1,6 +1,17 @@
 // Enhanced Secure Inventory Management System with Fixed Navigation
 
 // Application data with user authentication
+const toggle = document.getElementById('login-password-toggle');
+const passwordInput = document.getElementById('login-password');
+
+toggle.addEventListener('click', function () {
+  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordInput.setAttribute('type', type);
+  // Optional: toggle icon appearance
+  this.querySelector('i').classList.toggle('fa-eye');
+  this.querySelector('i').classList.toggle('fa-eye-slash');
+});
+
 let appData = {
   users: [
     {
